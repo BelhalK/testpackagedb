@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='testpackagedb',
-        version='0.1',
+        version='0.2',
         description='custom business functions',
         url='',
         author='Belhal Karimi',
