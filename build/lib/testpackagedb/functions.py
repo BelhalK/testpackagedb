@@ -8,7 +8,7 @@ def MultiplyNumbers(i, j):
     return i * j
 
 
-def loadmodel(modelname='search_relevance_v0'):
+def loadmodel(modelname='search_relevance_v0')
 	bimodel_finetuned = "s3://nikeplus-ngap-test/bernardabayowa/{}/models/2023-02-03/".format(modelnam)
 	local_bimodel_path='/tmp/bimodel_finetuned/'
 
@@ -16,4 +16,4 @@ def loadmodel(modelname='search_relevance_v0'):
 	os.environ['bimodel_finetuned_cmd']=bimodel_finetuned_cmd
 
 	dbutils.fs.mkdirs("file:"+local_bimodel_path)
-	return local_bimodel_path
+return local_bimodel_path

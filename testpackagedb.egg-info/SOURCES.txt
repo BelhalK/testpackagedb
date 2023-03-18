@@ -1,0 +1,7 @@
+setup.py
+testpackagedb/__init__.py
+testpackagedb/functions.py
+testpackagedb.egg-info/PKG-INFO
+testpackagedb.egg-info/SOURCES.txt
+testpackagedb.egg-info/dependency_links.txt
+testpackagedb.egg-info/top_level.txt
