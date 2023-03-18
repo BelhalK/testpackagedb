@@ -1,4 +1,6 @@
 import os
+import pyspark
+from pyspark.sql import SparkSession
 
 def get_dbutils(spark):
         try:
@@ -20,6 +22,7 @@ def MultiplyNumbers(i, j):
 
 
 def loadmodel(modelname='search_relevance_v0'):
+    spark = SparkSession.builder.getOrCreate()
 	dbutils = get_dbutils(spark)
 	
 	bimodel_finetuned = "s3://nikeplus-ngap-test/bernardabayowa/{}/models/2023-02-03/".format(modelname)
