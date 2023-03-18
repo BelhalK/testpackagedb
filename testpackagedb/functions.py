@@ -1,5 +1,14 @@
 import os
 
+def get_dbutils(spark):
+        try:
+            from pyspark.dbutils import DBUtils
+            dbutils = DBUtils(spark)
+        except ImportError:
+            import IPython
+            dbutils = IPython.get_ipython().user_ns["dbutils"]
+        return dbutils
+
 def AddNumbers(i, j):
     return i + j
 
@@ -11,6 +20,8 @@ def MultiplyNumbers(i, j):
 
 
 def loadmodel(modelname='search_relevance_v0'):
+	dbutils = get_dbutils(spark)
+	
 	bimodel_finetuned = "s3://nikeplus-ngap-test/bernardabayowa/{}/models/2023-02-03/".format(modelname)
 	local_bimodel_path='/tmp/bimodel_finetuned/'
 
